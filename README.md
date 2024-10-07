@@ -1,82 +1,109 @@
 
-# LeetCode Cracker: API-Powered Problem Solving with GPT-4o
+# 🚀 LeetCode Cracker: API-Powered Problem Solving with GPT-4o 🧠
 
-## Overview
+## 📄 Overview
 
-This project is an approach to showcase my skills with API integrations, using the **OpenAI GPT-4o API** and **prompt engineering**. It demonstrates how accurate you can go with GPT coding when you know how to design your prompts. The entire process, from scraping the problems to solving them and submitting the solutions, is automated. 
+This project is designed to showcase my skills with **API integrations**, specifically using the **OpenAI GPT-4o API** and **prompt engineering**. It demonstrates how precise and powerful GPT coding can be when the prompt is well-designed. From scraping problem links to solving and submitting solutions, this project automates the entire LeetCode problem-solving process.
 
-Initially, my rank on LeetCode was above **2 million**. After running this project, my rank reached **170** within just 15 days! 
+Initially, my rank on LeetCode was above **2 million**. After implementing this approach, my rank skyrocketed to **170** within just 15 days!
 
-![Rank Change](./rank-1.png)
+<p align="center">
+    <img src="./rank-1.png" alt="Rank Change">
+    <img src="./rank-2.png" alt="Rank Change">
+</p>
 
-![Rank Change](./rank-2.png)
+Moreover, I outperformed **99.9%** of users across **hard**, **medium**, and **easy** problems! 🚀
 
-Not only did my rank improve, but I also scored higher than **99.9%** of the users across hard, medium, and easy problems! ![Performance](./performance.png)
+<p align="center">
+    <img src="./performance.png" alt="Performance">
+</p>
 
-## Prerequisites
+---
 
-To get started, you will need the following:
+## 🛠 Prerequisites
 
-1. Python 3.7+
-2. Google Chrome (latest version)
-3. Selenium
-4. WebDriverManager
-5. OpenAI Python API
-6. PyAutoGUI
-7. Pandas
+To run this project, you'll need the following:
 
-## How it Works
+- Python 3.7+
+- Google Chrome (latest version)
+- Selenium
+- WebDriverManager
+- OpenAI Python API
+- PyAutoGUI
+- Pandas
+
+---
+
+## ⚙️ How It Works
 
 ### Step 1: Scraping the Problems
 
-First, you need to scrape the problem links from LeetCode using the provided `scrape.py` script. If you want to focus on a certain type of problems (e.g., Easy, Medium, or Hard), you can manually adjust your filters on the [LeetCode Problems Page](https://leetcode.com/problemset/all/) and copy the custom URL. This allows you to scrape only the problems you're interested in. Here’s the block where you can change the URL:
+The first step involves scraping LeetCode problem links using the `scrape.py` script. You can focus on specific types of problems (e.g., **Easy**, **Medium**, or **Hard**) by manually adjusting filters on the [LeetCode Problems Page](https://leetcode.com/problemset/all/) and copying the custom URL.
+
+Modify the following section in `scrape.py` to use your preferred filters:
 
 ```python
 # In scrape.py
-driver.get("https://leetcode.com/problemset/?status=NOT_STARTED&page=1") # Change this URL based on your custom filters.
+driver.get("https://leetcode.com/problemset/?status=NOT_STARTED&page=1")  # Change this URL based on your custom filters.
 ```
 
-Run the script:
+Run the scraping script using:
 
 ```bash
 python scrape.py
 ```
 
-This will scrape all the problems listed on the LeetCode page and save them to `problems-database.xlsx`.
+The script will scrape all listed problems on the LeetCode page and save them to `problems-database.xlsx`.
+
+---
 
 ### Step 2: Solving the Problems
 
-Once you have the list of problems, run the `solver.py` script to solve them. This script uses **GPT-4o** to generate solutions based on the problem description and starter code.
+Once you've scraped the problem links, the `solver.py` script will solve them using **GPT-4o**. It generates solutions based on the problem description and starter code.
 
-To adjust the generated code's language, log in to your LeetCode account, navigate to any problem, and manually select the target language in the code editor. This selection ensures the solution generated will be in the desired language.
+You can change the generated solution's language by logging into your LeetCode account, navigating to any problem, and selecting the desired language in the code editor. The script will respect your language preference during the solution generation.
 
-The results will be saved back into the `problems.xlsx` file, along with the solution, the programming language used, and whether the submission was successful.
-
-Run the script:
+Run the solving script with:
 
 ```bash
 python solver.py
 ```
 
-### Step 3: Analytics and Results
-
-Based on my personal analytics, the **acceptance rate** achieved through this method is **around 87%**, which is impressive given the complexity of some of the problems. ![Acceptance Rate](./acceptance.png)
-
-## Key Features
-
-- **Customizable Scraping**: Adjust filters directly on LeetCode and update the scrape URL to focus on specific problem types.
-- **Flexible Language Support**: You can choose which language GPT-4 generates solutions for by adjusting your language preference on LeetCode before running the solver.
-- **No Reliance on Other People's Solutions**: This script does not scrape solutions. It uses GPT-4 to independently solve problems based on problem descriptions and starter code.
-- **Collaborate and Enhance**: Anyone who wishes to collaborate or enhance this code is welcome to contribute!
-
-## Conclusion
-
-This project demonstrates the power of combining **Selenium**, **OpenAI's GPT API**, and proper **prompt engineering** to automate and solve coding problems at a high level. The results show an impressive improvement in rank and problem-solving capabilities.
-
-## Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit pull requests to improve the code or add new features.
+The solutions will be saved in `problems.xlsx` along with the programming language and the submission status.
 
 ---
 
-For any issues or inquiries, please contact me. I'm open to collaboration and excited to continue enhancing this project.
+### Step 3: Analytics and Results
+
+After running the process, my analytics showed an **87% acceptance rate**, which is impressive given the complexity of the problems solved.
+
+<p align="center">
+    <img src="./acceptance.png" alt="Acceptance Rate">
+</p>
+
+---
+
+## 🔑 Key Features
+
+- **Customizable Scraping**: Easily adjust filters on LeetCode and update the scrape URL to focus on specific types of problems.
+- **Flexible Language Support**: Choose the programming language for your solutions by selecting your language preference on LeetCode before running the solver.
+- **No Reliance on Existing Solutions**: This method doesn’t scrape existing solutions. Instead, it uses GPT-4 to generate original solutions based on problem descriptions and starter code.
+- **Collaborate & Enhance**: Open to collaboration! Anyone who wants to enhance this code is welcome to contribute.
+
+---
+
+## 🎯 Conclusion
+
+This project demonstrates the power of combining **Selenium**, **OpenAI's GPT-4o API**, and proper **prompt engineering** to automate coding problems at a high level. The results are evident in the improved rank and problem-solving capability.
+
+---
+
+## 🤝 Contributing
+
+Contributions are encouraged! Feel free to fork the repository and submit pull requests to improve the code or add new features.
+
+For any questions or collaborations, please don’t hesitate to contact me!
+
+---
+
+✨ *Happy Coding!*
